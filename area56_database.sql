@@ -129,3 +129,7 @@ CREATE TABLE `supply_products`(
     CONSTRAINT `sup_prods_ibfk_2` FOREIGN KEY (`productID`) REFERENCES `products`
 
 );
+
+
+-- PART B ----------------------------
+--
