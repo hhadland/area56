@@ -48,9 +48,21 @@
     <p></p>
 
     <h2>Suppliers</h2>
-    <!-- Table of data-->
-    <form id="dataTable">
-    </form>
+        <!--Search field-->
+        <h3>Search</h3>
+        <form id = "search">
+            <label>ID: <input type="number" name="supplierID" id="supplierID"></label>
+            <label>Name: <input type="text" name="name" id="name"></label>
+            <label>E-mail: <input type="text" name="email" id="email"></label>
+            <label>Address: <input type="text" name="supplierAddress" id="supplierAddress"></label>
+            <label>Phone #: <input type="text" name="supplierPhone" id="supplierPhone"></label>
+        </form>
+        <p></p>
+        
+        <!-- Data Table-->
+        <form id="dataTable">
+       </form>
+
     <script>
         const makeTable = () => {
         //iterate over the rows
