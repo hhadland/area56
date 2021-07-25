@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Products</title>
+</head>
+
+<body>
+    <div>
+        <a href="https://web.engr.oregonstate.edu/~hadlandh/">Home page</a>
+    </div>
+
+    <fieldset>
+        <h1>
+            Supply Products
+        </h1>
+        <h2>This is where you are able to add which products are supplied by which suppliers.</h2>
+    <h2>Add Supply Product</h2>
+    <form id="addSupplyProduct">
+        <label>Product ID: <input type="text" name="productID" id="productID"></label>
+        <label>Supplier ID: <input type="text" name="supplierID" id="supplierID"></label>
+        <input type="submit" value="submit">
+    </form>
+    <p></p>
+
+    <h2>Update Supply Product</h2>
+    <form id="updateSupplyProduct">
+        <label>Product ID: <input type="text" name="productID" id="productID"></label>
+        <label>Supplier ID: <input type="text" name="supplierID" id="supplierID"></label>
+
+        <input type="submit" value="submit">
+
+    </form>
+    <p></p>
+
+    <h2>Delete Product</h2>
+    <form id="deleteProduct">
+        <label>Product ID: <input type="text" name="productID" id="productID"></label>
+        <label>Supplier ID: <input type="text" name="supplierID" id="supplierID"></label>
+        <input type="submit" value="submit">
+
+    </form>
+    <p></p>
+
+    <h2>Supply Product</h2>
+    <form id="dataTable">
+    </form>
+<script>
+    const makeTable = () => {
+
+    var headerArray = ["Product ID", "Supplier ID"];
+    sqlTable = document.getElementById("dataTable");
+    var tableHead = document.createElement("thead");
+    var headerRow = document.createElement("tr");
+
+    for (var c = 0; c<2; c++){
+        var headerCell = document.createElement("th");
+        headerCell.style.borderStyle = "solid";
+        headerCell.style.borderWidth = "thin";
+        headerCell.style.padding = "20px";
+        headerCell.textContent = headerArray[c];
+        headerRow.appendChild(headerCell);
+    }
+    tableHead.appendChild(headerRow);
+    sqlTable.appendChild(tableHead);
+
+    var tableBody = document.createElement("tbody");
+
+
+    //appends the table into the page body
+    sqlTable.appendChild(tableBody);
+    };
+    document.addEventListener('DOMContentLoaded', makeTable);
+</script>
+</body>
+</html>

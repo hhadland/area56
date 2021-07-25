@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+</head>
+
+<body>
+    <div>
+        <a href="https://web.engr.oregonstate.edu/~hadlandh/">Home page</a>
+    </div>
+    <fieldset>
+        <h1>
+            Suppliers
+        </h1>
+    <h2>Add Supplier</h2>
+    <form id="addSupplier">
+        <label>Name: <input type="text" name="name" id="name"></label>
+        <label>E-mail: <input type="text" name="email" id="email"></label>
+        <label>Address: <input type="text" name="supplierAddress" id="supplierAddress"></label>
+        <label>Phone #: <input type="text" name="supplierPhone" id="supplierPhone"></label>
+
+        <input type="submit" value="submit">
+    </form>
+    <p></p>
+
+<!--"ID", "Name", "Address", "E-mail", "Phone #", "Contact ID" -->
+    <h2>Update Supplier</h2>
+    <form id="updateSupplier">
+        <label>ID (Required): <input type="number" name="supplierID" id="supplierID"></label>
+        <label>Name: <input type="text" name="name" id="name"></label>
+        <label>E-mail: <input type="text" name="email" id="email"></label>
+        <label>Address: <input type="text" name="supplierAddress" id="supplierAddress"></label>
+        <label>Phone #: <input type="text" name="supplierPhone" id="supplierPhone"></label>
+
+        <input type="submit" value="submit">
+
+    </form>
+    <p></p>
+
+    <h2>Delete Supplier</h2>
+    <form id="deleteSupplier">
+        <label>ID: <input type="number" name="supplierID" id="supplierID"></label>
+        <input type="submit" value="submit">
+
+    </form>
+    <p></p>
+
+    <h2>Suppliers</h2>
+    <!-- Table of data-->
+    <form id="dataTable">
+    </form>
+    <script>
+        const makeTable = () => {
+        //iterate over the rows
+        //Add table data cells each with the data for that column
+        //Add the buttons
+
+        var headerArray = ["ID", "Name", "Address", "E-mail", "Phone #", "Contact ID"];
+        sqlTable = document.getElementById("dataTable");
+        var tableHead = document.createElement("thead");
+        var headerRow = document.createElement("tr");
+
+        //will populate the table header
+        for (var c = 0; c<6; c++){
+            var headerCell = document.createElement("th");
+            headerCell.style.borderStyle = "solid";
+            headerCell.style.borderWidth = "thin";
+            headerCell.style.padding = "20px";
+            headerCell.textContent = headerArray[c];
+            headerRow.appendChild(headerCell);
+        }
+        tableHead.appendChild(headerRow);
+        sqlTable.appendChild(tableHead);
+
+        var tableBody = document.createElement("tbody");
+
+
+        //appends the table into the page body
+        sqlTable.appendChild(tableBody);
+        };
+        document.addEventListener('DOMContentLoaded', makeTable);
+    </script>
+</body>
+</html>

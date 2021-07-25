@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+</head>
+<body>
+    <div>
+        <a href="https://web.engr.oregonstate.edu/~hadlandh/">Home page</a>
+    </div>
+<h1>
+    Contacts
+</h1>
+
+<h1>Add Contact</h1>
+<form id="addContact">
+    <label>First Name: <input type="text" name="fName" id="lName"/></label>
+    <label>Last Name: <input type="text" name="lName" id="lName"/></label>
+    <label>E-mail: <input type="text" name="email" id="email"/></label>
+    <label>Phone #: <input type="text" name="phone" id="phone"/></label>
+
+    <input type="submit" value="submit"/>
+
+
+</form>
+<p></p>
+<h1>Update Contact</h1>
+<form id="updateContact">
+    <label>ID (Required): <input type="number" name="id" id= "id"/></label>
+    <label>First Name: <input type="text" name="fName" id="lName"/></label>
+    <label>Last Name: <input type="text" name="lName" id="lName"/></label>
+    <label>E-mail: <input type="text" name="email" id="email"/></label>
+    <label>Phone #: <input type="text" name="phone" id="phone"/></label>
+
+    <input type="submit" value="submit"/>
+
+</form>
+<p></p>
+
+<h1>Delete Contact</h1>
+<form id="deleteContact">
+    <label>ID: <input type="number" name="id" id= "id"/></label>
+    <input type="submit" value="submit"/>
+
+</form>
+<p></p>
+
+<h1>Contacts</h1>
+<!-- Data Table-->
+
+<form id = "dataTable">
+
+</form>
+<script>
+    const makeTable = () => {
+    //iterate over the rows
+        //Add table data cells each with the data for that column
+        //Add the buttons
+
+        var headerArray = ["ID", "First Name", "Last Name", "E-Mail", "Phone #"];
+        sqlTable = document.getElementById("dataTable");
+        var tableHead = document.createElement("thead");
+        var headerRow = document.createElement("tr");
+
+        //will populate the table header
+        for (var c = 0; c<5; c++){
+            var headerCell = document.createElement("th");
+            headerCell.style.borderStyle = "solid";
+            headerCell.style.borderWidth = "thin";
+            headerCell.style.padding = "20px";
+            headerCell.textContent = headerArray[c];
+            headerRow.appendChild(headerCell);
+        }
+        tableHead.appendChild(headerRow);
+        sqlTable.appendChild(tableHead);
+
+        var tableBody = document.createElement("tbody");
+
+
+//appends the table into the page body
+    sqlTable.appendChild(tableBody);
+    };
+    document.addEventListener('DOMContentLoaded', makeTable);
+</script>
+</body>
