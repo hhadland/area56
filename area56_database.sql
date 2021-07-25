@@ -142,3 +142,4 @@ CREATE TABLE supply_products(
 --
 -- PART B ----------------------------
 --
+--
