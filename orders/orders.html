@@ -45,8 +45,22 @@
     <p></p>
 
     <h2>Orders</h2>
-    <form id="dataTable">
-    </form>
+
+    <!--Search field-->
+    <h3>Search</h3>
+        <form id = "search">
+            <label>ID: <input type="number" name="orderID" id="orderID"></label>
+            <label>Cost: <input type="text" name="orderCost" id="orderCost"></label>
+            <label>Sales Rep ID: <input type="text" name="salesRepID" id="salesRepID"></label>
+            <label>Client ID: <input type="text" name="clientID" id="clientID"></label>    
+
+            <input type="submit" value="submit"/>
+        </form>
+        <p></p>
+        <!-- Data Table-->
+
+        <form id="dataTable">
+        </form>
 <script>
     const makeTable = () => {
 
