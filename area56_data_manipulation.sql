@@ -66,5 +66,31 @@ INSERT INTO contacts (fname, lname, email, phone) VALUES (:fNameInput, :lNameInp
 UPDATE contacts SET fName = :fNameInput, lName = :lNameInput, email = :contactEmailInput, phone = :contactPhoneInput WHERE contactID = :contactIDInput;
 
 -- delete existing contact from contacts table
-DELETE FROM contacts WHERE contact = :contactIDInput;
+DELETE FROM contacts WHERE contactID = :contactIDInput;
 
+-- add a new product into products table
+INSERT INTO products (item, cost) VALUES (:itemInput, :itemCost);
+
+-- update existing product in products table
+UPDATE products SET item = :itemInput, cost = itemCost WHERE productID = :productIDInput;
+
+-- delete existing product from products table
+DELETE FROM products WHERE productID = :productIDInput;
+
+-- add a new order into orders table
+INSERT INTO orders (repID, clientID) VALUES (:repIDInput, :clientIDInput);
+
+-- update existing order in orders table
+UPDATE orders SET repID = :repIDInput, clientID = clientIDInput WHERE orderID = :orderIDInput;
+
+-- delete existing order from orders table
+DELETE FROM orders WHERE orderID = :orderIDInput;
+
+-- add a new order_product into order_products table
+INSERT INTO order_products (orderID, productID, quantity) VALUES (:orderIDInput, :productIDInput, :quantityInput);
+
+-- update existing order_product in order_products table
+UPDATE order_products SET quantity = quantityInput WHERE orderID = :orderIDInput, productID = productIDInput;
+
+-- delete existing order_product from order_products table
+DELETE FROM order_products WHERE orderID = :orderIDInput, productID = productIDInput;
