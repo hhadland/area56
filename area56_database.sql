@@ -123,20 +123,20 @@ INSERT INTO clients (name, address, email, phone, contactID, repID) VALUES ("Big
 INSERT INTO clients (name, address, email, phone, contactID, repID) VALUES ("Best Stuff", "997 West Dr, Houston, TX 77002", "beststuff@gmail.com", "281-753-1159", 2, 2);
 INSERT INTO clients (name, address, email, phone, contactID, repID) VALUES ("Wholesome Foods", "636 Downtown Blvd, San Francisco, CA 94108", "wholesomefoods@gmail.com", "415-395-2252", 3, 3);
 
-INSERT INTO orders (repID, clientID) VALUES (1, 1, 1);
-INSERT INTO orders (repID, clientID) VALUES (2, 2, 2);
-INSERT INTO orders (repID, clientID) VALUES (3, 3, 3);
+INSERT INTO orders (repID, clientID) VALUES (1, 1);
+INSERT INTO orders (repID, clientID) VALUES (2, 2);
+INSERT INTO orders (repID, clientID) VALUES (3, 3);
 
-INSERT INTO products (tem, cost) VALUES ("Banana", 1);
-INSERT INTO products (tem, cost) VALUES ("Apple", 1);
-INSERT INTO products (tem, cost) VALUES ("Chicken", 10);
-INSERT INTO products (tem, cost) VALUES ("Salmon", 20);
-INSERT INTO products (tem, cost) VALUES ("Bread", 3);
-INSERT INTO products (tem, cost) VALUES ("Milk", 4);
-INSERT INTO products (tem, cost) VALUES ("Carton of Eggs", 2);
-INSERT INTO products (tem, cost) VALUES ("Coffee Beans", 8);
-INSERT INTO products (tem, cost) VALUES ("Broccoli", 3);
-INSERT INTO products (tem, cost) VALUES ("Carrots", 2);
+INSERT INTO products (item, cost) VALUES ("Banana", 1);
+INSERT INTO products (item, cost) VALUES ("Apple", 1);
+INSERT INTO products (item, cost) VALUES ("Chicken", 10);
+INSERT INTO products (item, cost) VALUES ("Salmon", 20);
+INSERT INTO products (item, cost) VALUES ("Bread", 3);
+INSERT INTO products (item, cost) VALUES ("Milk", 4);
+INSERT INTO products (item, cost) VALUES ("Carton of Eggs", 2);
+INSERT INTO products (item, cost) VALUES ("Coffee Beans", 8);
+INSERT INTO products (item, cost) VALUES ("Broccoli", 3);
+INSERT INTO products (item, cost) VALUES ("Carrots", 2);
 
 INSERT INTO order_products (orderID, productID, quantity) VALUES (1, 1, 100);
 INSERT INTO order_products (orderID, productID, quantity) VALUES (2, 5, 50);
