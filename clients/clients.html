@@ -17,25 +17,25 @@
         <!-- ["ID", "Name", "Address", "Phone #", "Contact ID"]-->
     <h2>Add Client</h2>
     <form id="addClient">
-        <label>Name: <input type="text" name="name" id="name"></label>
-        <label>Address: <input type="text" name="clientAddress" id="clientAddress"></label>
-        <label>E-mail: <input type="text" name="email" id="email"/></label>
-        <label>Phone #: <input type="text" name="clientPhone" id="clientPhone"></label>
-        <label>Contact ID: <input type="number" name="contactID" id="contactID"></label>
-        <label>repID: <input type="number" name="repID" id="repID"/></label>
+        <label>Name: <input type="text" name="clientNameInput" id="clientNameInput"></label>
+        <label>Address: <input type="text" name="clientAddressInput" id="clientAddressInput"></label>
+        <label>E-mail: <input type="text" name="clientEmailInput" id="clientEmailInput"/></label>
+        <label>Phone #: <input type="text" name="clientPhoneInput" id="clientPhoneInput"></label>
+        <label>Contact ID: <input type="number" name="contactIDInput" id="contactIDInput"></label>
+        <label>repID: <input type="number" name="repIDInput" id="repIDInput"/></label>
         <input type="submit" value="submit">
     </form>
     <p></p>
 
     <h2>Update Client</h2>
     <form id="updateClient">
-        <label>ID (Required): <input type="number" name="clientID" id="clientID"></label>
-        <label>Name: <input type="text" name="name" id="name"></label>
-        <label>Address: <input type="text" name="clientAddress" id="clientAddress"></label>
-        <label>E-mail: <input type="text" name="email" id="email"/></label>
-        <label>Phone #: <input type="text" name="clientPhone" id="clientPhone"></label>
-        <label>Contact ID: <input type="number" name="contactID" id="contactID"></label>
-        <label>repID: <input type="number" name="repID" id="repID"/></label>
+        <label>ID (Required): <input type="number" name="clientIDInput" id="clientIDInput"></label>
+        <label>Name: <input type="text" name="clientNameInput" id="clientNameInput"></label>
+        <label>Address: <input type="text" name="clientAddressInput" id="clientAddressInput"></label>
+        <label>E-mail: <input type="text" name="clientEmailInput" id="clientEmailInput"/></label>
+        <label>Phone #: <input type="text" name="clientPhoneInput" id="clientPhoneInput"></label>
+        <label>Contact ID: <input type="number" name="contactIDInput" id="contactIDInput"></label>
+        <label>repID: <input type="number" name="repIDInput" id="repIDInput"/></label>
         <input type="submit" value="submit">
 
     </form>
@@ -43,7 +43,7 @@
 
     <h2>Delete Client</h2>
     <form id="deleteClient">
-        <label>ID: <input type="number" name="clientID" id="clientID"></label>
+        <label>ID: <input type="number" name="clientIDInput" id="clientIDInput"></label>
         <input type="submit" value="submit">
 
     </form>
@@ -53,13 +53,13 @@
 
     <h3>Search</h3>
     <form id = "search">
-        <label>ID: <input type="number" name="id" id= "id"/></label>
-        <label>Name: <input type="text" name="name" id="name"/></label>
-        <label>Address: <input type="text" name="address" id="address"/></label>
-        <label>E-mail: <input type="text" name="email" id="email"/></label>
-        <label>Phone #: <input type="text" name="phone" id="phone"/></label>
-        <label>contactID: <input type="number" name="contactID" id="contactID"/></label>
-        <label>repID: <input type="number" name="repID" id="repID"/></label>
+        <label>ID: <input type="number" name="clientIDInput" id= "clientIDInput"/></label>
+        <label>Name: <input type="text" name="clientNameInput" id="clientNameInput"/></label>
+        <label>Address: <input type="text" name="clientAddressInput" id="clientAddressInput"/></label>
+        <label>E-mail: <input type="text" name="clientEmailInput" id="clientEmailInput"/></label>
+        <label>Phone #: <input type="text" name="clientPhoneInput" id="clientPhoneInput"/></label>
+        <label>contactID: <input type="number" name="contactIDInput" id="contactIDInput"/></label>
+        <label>repID: <input type="number" name="repIDInput" id="repIDInput"/></label>
     <input type="submit" value="submit"/>
     </form>
     <!-- Table of data-->
@@ -72,13 +72,13 @@
         //Add table data cells each with the data for that column
         //Add the buttons
 
-        var headerArray = ["ID", "Name", "Address", "Phone #", "Contact ID"];
+        var headerArray = ["ID", "Name", "Address", "Email", "Phone #", "Contact ID", "Sales Rep ID"];
         sqlTable = document.getElementById("dataTable");
         var tableHead = document.createElement("thead");
         var headerRow = document.createElement("tr");
 
         //will populate the table header
-        for (var c = 0; c<5; c++){
+        for (var c = 0; c<7; c++){
             var headerCell = document.createElement("th");
             headerCell.style.borderStyle = "solid";
             headerCell.style.borderWidth = "thin";
