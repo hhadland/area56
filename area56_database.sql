@@ -10,9 +10,7 @@
 
 DROP TABLE IF EXISTS order_products;
 DROP TABLE IF EXISTS orders;
-DROP TABLE IF EXISTS supply_products;
 DROP TABLE IF EXISTS clients;
-DROP TABLE IF EXISTS suppliers;
 DROP TABLE IF EXISTS contacts;
 DROP TABLE IF EXISTS sales_representatives;
 DROP TABLE IF EXISTS products;
@@ -108,36 +106,6 @@ CREATE TABLE order_products(
 
 );
 
---
--- Table structure for table suppliers
---
-
-CREATE TABLE suppliers(
-    supplierID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    name varchar(255) NOT NULL,
-    address varchar(255) NOT NULL,
-    email varchar(255) NOT NULL,
-    phone varchar(255) NOT NULL,
-    contactID int(11) NOT NULL,
-    FOREIGN KEY suppliers_ibfk_1 (contactID) REFERENCES contacts (contactID)
-
-);
-
-
---
--- Table structure for table supply_products
---
-
-
-CREATE TABLE supply_products(
-    supplierID int(11) NOT NULL,
-    productID int(11) NOT NULL,
-
-    FOREIGN KEY sup_prods_ibfk_1 (supplierID) REFERENCES suppliers (supplierID),
-    FOREIGN KEY sup_prods_ibfk_2 (productID) REFERENCES products (productID),
-    PRIMARY KEY (productID,supplierID)
-
-);
 
 --
 -- PART B ----------------------------
