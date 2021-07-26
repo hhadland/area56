@@ -170,7 +170,7 @@ INSERT INTO products (tem, cost) VALUES ("Coffee Beans", 8);
 INSERT INTO products (tem, cost) VALUES ("Broccoli", 3);
 INSERT INTO products (tem, cost) VALUES ("Carrots", 2);
 
-INSERT INTO order_products (orderID, productID, quantity) VALUES (1, 100);
-INSERT INTO order_products (orderID, productID, quantity) VALUES (5, 50);
-INSERT INTO order_products (orderID, productID, quantity) VALUES (8, 25);
+INSERT INTO order_products (orderID, productID, quantity) VALUES (1, 1, 100);
+INSERT INTO order_products (orderID, productID, quantity) VALUES (2, 5, 50);
+INSERT INTO order_products (orderID, productID, quantity) VALUES (3, 8, 25);
 
