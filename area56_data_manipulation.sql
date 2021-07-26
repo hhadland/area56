@@ -42,4 +42,29 @@ DELETE FROM bsg_cert_people WHERE pid = :character_ID_selected_from_certificate_
 
 
 -- add a new client into clients table
-INSERT INTO clients (name, address, email, phone, contactID, repID) VALUES (:name, :address, :email, :phone, :contactID, :repID);
+INSERT INTO clients (name, address, email, phone, contactID, repID) VALUES (:clientNameInput, :clientAddressInput, :clientEmailInput, :clientPhoneInput, :contactIDInput, :repIDInput);
+
+-- update existing client in clients table
+UPDATE clients SET name = :clientNameInput, address = :clientAddressInput, email = :clientEmailInput, phone = :clientPhoneInput, contactID = :contactIDInput, repID = :repIDInput WHERE clientID = :clientIDInput;
+
+-- delete existing client from clients table
+DELETE FROM clients WHERE clientID = :clientIDInput;
+
+-- add a new sales representative into sales_representatives table
+INSERT INTO sales_representatives (fname, lname, email, phone) VALUES (:fNameInput, :lNameInput, :repEmailInput, :repPhoneInput);
+
+-- update existing sales representative in sales_representatives table
+UPDATE sales_representatives SET fName = :fNameInput, lName = :lNameInput, email = :repEmailInput, phone = :repPhoneInput WHERE repID = :repIDInput;
+
+-- delete existing sales representative from sales_representatives table
+DELETE FROM sales_representatives WHERE repID = :repIDInput;
+
+-- add a new contact into contacts table
+INSERT INTO contacts (fname, lname, email, phone) VALUES (:fNameInput, :lNameInput, :contactEmailInput, :contactPhoneInput);
+
+-- update existing contact in contacts table
+UPDATE contacts SET fName = :fNameInput, lName = :lNameInput, email = :contactEmailInput, phone = :contactPhoneInput WHERE contactID = :contactIDInput;
+
+-- delete existing contact from contacts table
+DELETE FROM contacts WHERE contact = :contactIDInput;
+
