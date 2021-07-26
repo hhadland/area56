@@ -6,8 +6,6 @@
 -- PART A ----------------------------
 --
 
-
-
 DROP TABLE IF EXISTS order_products;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS supply_products;
@@ -143,3 +141,35 @@ CREATE TABLE supply_products(
 -- PART B ----------------------------
 --
 --
+
+INSERT INTO contacts VALUES (1, "Elvis", "Presley", "epresley@aol.com", "323-555-5555");
+INSERT INTO contacts VALUES (2, "Elvis", "Costello", "ecostello@aol.com", "310-222-2222");
+INSERT INTO contacts VALUES (3, "Buddy", "Holly", "bholly@gmail.com", "323-191-9151");
+
+INSERT INTO sales_representatives VALUES (1, "John", "Lennon", "jlennon@gmail.com", "323-616-6626");
+INSERT INTO sales_representatives VALUES (2, "Paul", "McCartney", "pmccartney@gmail.com", "323-881-1888");
+INSERT INTO sales_representatives VALUES (3, "Ringo", "Starr", "rstarr@gmail.com", "323-255-5225");
+
+INSERT INTO clients VALUES (1, "Big Grocers", "151 North Ln, Des Moines, IA 50061", "biggrocers@gmail.com", "515-789-9987", 1, 1);
+INSERT INTO clients VALUES (2, "Best Stuff", "997 West Dr, Houston, TX 77002", "beststuff@gmail.com", "281-753-1159", 2, 2);
+INSERT INTO clients VALUES (3, "Wholesome Foods", "636 Downtown Blvd, San Francisco, CA 94108", "wholesomefoods@gmail.com", "415-395-2252", 3, 3);
+
+INSERT INTO orders VALUES (1, 1, 1);
+INSERT INTO orders VALUES (2, 2, 2);
+INSERT INTO orders VALUES (3, 3, 3);
+
+INSERT INTO products VALUES (1, "Banana", 1);
+INSERT INTO products VALUES (2, "Apple", 1);
+INSERT INTO products VALUES (3, "Chicken", 10);
+INSERT INTO products VALUES (4, "Salmon", 20);
+INSERT INTO products VALUES (5, "Bread", 3);
+INSERT INTO products VALUES (6, "Milk", 4);
+INSERT INTO products VALUES (7, "Carton of Eggs", 2);
+INSERT INTO products VALUES (8, "Coffee Beans", 8);
+INSERT INTO products VALUES (9, "Broccoli", 3);
+INSERT INTO products VALUES (10, "Carrots", 2);
+
+INSERT INTO order_products VALUES (1, 1, 100);
+INSERT INTO order_products VALUES (2, 5, 50);
+INSERT INTO order_products VALUES (3, 8, 25);
+
