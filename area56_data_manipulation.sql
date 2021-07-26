@@ -37,3 +37,9 @@ DELETE FROM bsg_people WHERE id = :character_ID_selected_from_browse_character_p
 -- dis-associate a certificate from a person (M-to-M relationship deletion)
 DELETE FROM bsg_cert_people WHERE pid = :character_ID_selected_from_certificate_and_character_list AND cid = :certification_ID_selected_from-certificate_and_character_list
 
+
+------------------------------- INSERT our stuff here -------------------------------
+
+
+-- add a new client into clients table
+INSERT INTO clients (name, address, email, phone, contactID, repID) VALUES (:name, :address, :email, :phone, :contactID, :repID);
