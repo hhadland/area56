@@ -1,5 +1,5 @@
 
--- MySQL dump for project database.
+-- MySQL dump for project database in CS340.
 -- -------------------------------------
 
 
