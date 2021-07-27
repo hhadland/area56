@@ -52,7 +52,7 @@ UPDATE clients SET name = :clientNameInput, address = :clientAddressInput, email
 DELETE FROM clients WHERE clientID = :clientIDInput;
 
 -- get sales representative for the sales representative table
-SELECT repID, fname, lname, email, phone FROM sales_representatives
+SELECT repID, fname, lname, email, phone FROM sales_representatives;
 
 -- add a new sales representative into sales_representatives table
 INSERT INTO sales_representatives (fname, lname, email, phone) VALUES (:fNameInput, :lNameInput, :repEmailInput, :repPhoneInput);
@@ -64,7 +64,7 @@ UPDATE sales_representatives SET fName = :fNameInput, lName = :lNameInput, email
 DELETE FROM sales_representatives WHERE repID = :repIDInput;
 
 -- get contacts for the contacts table
-SELECT contactID, fname, lname, email, phone FROM contacts
+SELECT contactID, fname, lname, email, phone FROM contacts;
 
 -- add a new contact into contacts table
 INSERT INTO contacts (fname, lname, email, phone) VALUES (:fNameInput, :lNameInput, :contactEmailInput, :contactPhoneInput);
@@ -76,7 +76,7 @@ UPDATE contacts SET fName = :fNameInput, lName = :lNameInput, email = :contactEm
 DELETE FROM contacts WHERE contactID = :contactIDInput;
 
 -- get products for the products table
-SELECT productID, item, cost FROM products
+SELECT productID, item, cost FROM products;
 
 -- add a new product into products table
 INSERT INTO products (item, cost) VALUES (:itemInput, :itemCost);
@@ -88,7 +88,7 @@ UPDATE products SET item = :itemInput, cost = itemCost WHERE productID = :produc
 DELETE FROM products WHERE productID = :productIDInput;
 
 -- get products for the products table
-SELECT orderID, repID, clientID FROM orders
+SELECT orderID, repID, clientID FROM orders;
 
 -- add a new order into orders table
 INSERT INTO orders (repID, clientID) VALUES (:repIDInput, :clientIDInput);
