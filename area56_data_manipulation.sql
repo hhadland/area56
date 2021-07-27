@@ -39,7 +39,8 @@ DELETE FROM bsg_cert_people WHERE pid = :character_ID_selected_from_certificate_
 
 
 ------------------------------- INSERT our stuff here -------------------------------
-
+-- get clients for the client table
+SELECT clientID, name, address, email, phone, contactID, repID FROM clients
 
 -- add a new client into clients table
 INSERT INTO clients (name, address, email, phone, contactID, repID) VALUES (:clientNameInput, :clientAddressInput, :clientEmailInput, :clientPhoneInput, :contactIDInput, :repIDInput);
@@ -50,6 +51,9 @@ UPDATE clients SET name = :clientNameInput, address = :clientAddressInput, email
 -- delete existing client from clients table
 DELETE FROM clients WHERE clientID = :clientIDInput;
 
+-- get sales representative for the sales representative table
+SELECT repID, fname, lname, email, phone FROM sales_representatives
+
 -- add a new sales representative into sales_representatives table
 INSERT INTO sales_representatives (fname, lname, email, phone) VALUES (:fNameInput, :lNameInput, :repEmailInput, :repPhoneInput);
 
@@ -58,6 +62,9 @@ UPDATE sales_representatives SET fName = :fNameInput, lName = :lNameInput, email
 
 -- delete existing sales representative from sales_representatives table
 DELETE FROM sales_representatives WHERE repID = :repIDInput;
+
+-- get contacts for the contacts table
+SELECT contactID, fname, lname, email, phone FROM contacts
 
 -- add a new contact into contacts table
 INSERT INTO contacts (fname, lname, email, phone) VALUES (:fNameInput, :lNameInput, :contactEmailInput, :contactPhoneInput);
@@ -68,6 +75,9 @@ UPDATE contacts SET fName = :fNameInput, lName = :lNameInput, email = :contactEm
 -- delete existing contact from contacts table
 DELETE FROM contacts WHERE contactID = :contactIDInput;
 
+-- get products for the products table
+SELECT productID, item, cost FROM products
+
 -- add a new product into products table
 INSERT INTO products (item, cost) VALUES (:itemInput, :itemCost);
 
@@ -77,11 +87,14 @@ UPDATE products SET item = :itemInput, cost = itemCost WHERE productID = :produc
 -- delete existing product from products table
 DELETE FROM products WHERE productID = :productIDInput;
 
+-- get products for the products table
+SELECT orderID, repID, clientID FROM orders
+
 -- add a new order into orders table
 INSERT INTO orders (repID, clientID) VALUES (:repIDInput, :clientIDInput);
 
 -- update existing order in orders table
-UPDATE orders SET repID = :repIDInput, clientID = clientIDInput WHERE orderID = :orderIDInput;
+UPDATE orders SET repID = :repIDInput, clientID = :clientIDInput WHERE orderID = :orderIDInput;
 
 -- delete existing order from orders table
 DELETE FROM orders WHERE orderID = :orderIDInput;
@@ -90,7 +103,9 @@ DELETE FROM orders WHERE orderID = :orderIDInput;
 INSERT INTO order_products (orderID, productID, quantity) VALUES (:orderIDInput, :productIDInput, :quantityInput);
 
 -- update existing order_product in order_products table
-UPDATE order_products SET quantity = quantityInput WHERE orderID = :orderIDInput, productID = productIDInput;
+UPDATE order_products SET quantity = quantityInput WHERE orderID = :orderIDInput, productID = :productIDInput;
 
 -- delete existing order_product from order_products table
-DELETE FROM order_products WHERE orderID = :orderIDInput, productID = productIDInput;
+DELETE FROM order_products WHERE orderID = :orderIDInput, productID = :productIDInput;
+
+
