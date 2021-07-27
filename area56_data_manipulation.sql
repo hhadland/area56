@@ -108,4 +108,8 @@ UPDATE order_products SET quantity = quantityInput WHERE orderID = :orderIDInput
 -- delete existing order_product from order_products table
 DELETE FROM order_products WHERE orderID = :orderIDInput, productID = :productIDInput;
 
-
+-- get products, quantity of products and total cost of products in order
+SELECT orders.orderID as orderID, products.item as item, order_products.quantity as quantity, order_products.quantity * products.cost as cost from orders
+INNER JOIN order_products on orders.orderID = order_products.orderID
+INNER JOIN products on products.productID = order_products.productID
+ORDER by orderID;
