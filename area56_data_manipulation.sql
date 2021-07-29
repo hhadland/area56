@@ -67,7 +67,7 @@ INSERT INTO order_products (orderID, productID, quantity) VALUES (:orderIDInput,
 UPDATE order_products SET quantity = quantityInput WHERE orderID = :orderIDInput, productID = :productIDInput;
 
 -- delete existing order_product from order_products table
-DELETE FROM order_products WHERE orderID = :orderIDInput, productID = :productIDInput;
+DELETE FROM order_products WHERE orderID = :orderIDInput AND productID = :productIDInput;
 
 -- get products, quantity of products and total cost of products in order
 SELECT orders.orderID as orderID, products.item as item, order_products.quantity as quantity, order_products.quantity * products.cost as cost from orders
